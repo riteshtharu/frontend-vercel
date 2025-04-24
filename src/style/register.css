@@ -1,0 +1,171 @@
+/* Main Container */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 20px;
+}
+
+/* Card Styling */
+.register-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  margin: 20px;
+}
+
+.register-card h1 {
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.register-card .subtitle {
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Form Elements */
+.register-card form {
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Error Styling */
+.error-text {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.form-group input.error {
+  border-color: #dc2626;
+}
+
+/* Button Styling */
+.register-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.register-btn:hover {
+  background-color: #4338ca;
+}
+
+.register-btn:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* Links */
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #64748b;
+}
+
+.login-link span {
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.login-link span:hover {
+  color: #4338ca;
+  text-decoration: underline;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.modal-content.success {
+  border-top: 4px solid #10b981;
+}
+
+.modal-content.error {
+  border-top: 4px solid #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .register-card {
+    padding: 1.75rem;
+    margin: 10px;
+  }
+  
+  .register-card h1 {
+    font-size: 1.75rem;
+  }
+}

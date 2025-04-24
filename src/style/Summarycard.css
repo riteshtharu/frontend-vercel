@@ -1,0 +1,251 @@
+/* Reset some default styles for margin, padding, etc. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #072c2e;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #0c4a4e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  transition: left 0.3s ease;
+  overflow-y: auto; /* Add scroll if content is too long */
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: #9ae6b4;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px; /* Space before logout button */
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0; /* Reduced margin */
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: #e2e8f0;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: #0d3e40;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f7fafc;
+  color: #1a202c;
+  padding: 40px;
+  margin-left: 300px;
+  overflow-y: auto;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 0;
+}
+
+.main-content header {
+  margin-bottom: 30px; /* Added space below header */
+}
+
+.main-content header h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.main-content header p {
+  font-size: 16px;
+  color: #4a5568;
+}
+
+/* Table styles to prevent overlap */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.student-table th, 
+.student-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.student-table th {
+  background-color: #edf2f7;
+  font-weight: 600;
+}
+
+/* Search and Add Student section */
+.student-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 200px;
+}
+
+.add-student-btn {
+  background-color: #2b6cb0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 15;
+}
+
+/* Logout Button Styles */
+.logout-btn {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: auto; /* Push to bottom */
+}
+
+.logout-btn:hover {
+  background-color: #c53030;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar h2 {
+    margin-top: 50px; /* Added space to push title below hamburger */
+    margin-bottom: 20px; /* Reduced bottom margin */
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 80px; /* Added space for hamburger */
+  }
+
+  .sidebar {
+    width: 250px;
+    left: -250px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content header h1 {
+    font-size: 24px;
+  }
+
+  .student-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar h2 {
+    margin-top: 40px; /* Slightly less space on very small screens */
+    font-size: 18px;
+  }
+
+  .main-content {
+    padding: 20px 15px;
+    padding-top: 70px;
+  }
+
+  .main-content header h1 {
+    font-size: 20px;
+  }
+
+  .student-table th, 
+  .student-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 20px 15px;
+    padding-top: 70px;
+  }
+
+  .main-content header h1 {
+    font-size: 20px;
+  }
+
+  .student-table th, 
+  .student-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
