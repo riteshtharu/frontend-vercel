@@ -43,13 +43,17 @@ const Login = () => {
     }
 
     try {
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
       const { data } = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        `${API_URL}/api/auth/login`,
         { email, password },
         {
           headers: { "Content-Type": "application/json" },
+          withCredentials: true, // optional: needed if using cookies
         }
       );
+      
 
       if (data.token) {
         const token = data.token;
